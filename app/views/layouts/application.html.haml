@@ -1,0 +1,10 @@
+%html
+  
+  %head
+    %title IT Scaffold | Your Enterprise IT Partner
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tag
+  
+  %body.index{id: 'page-top'}
+    = yield
