@@ -4,26 +4,25 @@
     .row
       .col-lg-12.text-center
         %h2.section-heading Contact Us
-        %h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+        %h3.section-subheading.text-muted Message us with any questions you may have
     .row
       .col-lg-12
-        %form#contactForm{:name => "sentMessage", :novalidate => ""}
-          .row
-            .col-md-6
-              .form-group
-                %input#name.form-control{"data-validation-required-message" => "Please enter your name.", :placeholder => "Your Name *", :required => "", :type => "text"}
-                  %p.help-block.text-danger
-              .form-group
-                %input#email.form-control{"data-validation-required-message" => "Please enter your email address.", :placeholder => "Your Email *", :required => "", :type => "email"}
-                  %p.help-block.text-danger
-              .form-group
-                %input#phone.form-control{"data-validation-required-message" => "Please enter your phone number.", :placeholder => "Your Phone *", :required => "", :type => "tel"}
-                  %p.help-block.text-danger
-            .col-md-6
-              .form-group
-                %textarea#message.form-control{"data-validation-required-message" => "Please enter a message.", :placeholder => "Your Message *", :required => ""}
-                %p.help-block.text-danger
-            .clearfix
-            .col-lg-12.text-center
-              #success
-              %button.btn.btn-xl{:type => "submit"} Send Message
+        = form_tag 'leads'
+
+        .col-md-6
+          .form-group
+            = text_field_tag :name, nil, placeholder: 'Your Name', class: 'form-control'
+
+          .form-group
+            = text_field_tag :email, nil, placeholder: 'Your Email', class: 'form-control'
+
+          .form-group
+            = text_field_tag :phone, nil, placeholder: 'Your Phone', class: 'form-control'
+
+        .col-md-6
+          .form-group
+            = text_area_tag :message, nil, placeholder: 'Your Message', class: 'form-control'
+
+        .col-md-12
+          .form-group
+            = submit_tag 'Submit', class: 'btn btn-primary btn-block'

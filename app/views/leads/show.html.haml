@@ -1,0 +1,27 @@
+%div.container
+	%h2
+		Thanks for your message!
+
+	%p
+		Your message was sent sucessfully and we'll be getting back with you shortly.
+
+	%em
+		Message Preview
+
+	%hr
+
+	%div
+		= @lead.name
+
+	%div
+		= @lead.email
+
+	%div
+		= @lead.phone
+
+	%div
+		= @lead.message
+
+	%hr
+
+	= link_to 'Home', root_path, class: 'btn btn-primary'
