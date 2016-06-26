@@ -2,9 +2,11 @@
   .container
     .row
       .col-md-4
-        %span.copyright Copyright &copy; Your Website 2014
+        %span.copyright
+          = "Copyright &copy; IT Scaffold #{Time.now.year}".html_safe
+
       .col-md-4
-        %ul.list-inline.social-buttons
+        %ul.list-inline.social-footer
           %li
             %a{:href => "#"}
               %i.fa.fa-twitter
@@ -17,6 +19,4 @@
       .col-md-4
         %ul.list-inline.quicklinks
           %li
-            %a{:href => "#"} Privacy Policy
-          %li
-            %a{:href => "#"} Terms of Use
+            = link_to "Privacy Policy", privacy_policy_path
