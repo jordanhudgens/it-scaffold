@@ -3,6 +3,7 @@ class LeadsController < ApplicationController
     @lead = Lead.new(lead_params)
     
     if @lead.save
+      LeadMailer.homepage_email(@lead).deliver_later
       redirect_to lead_path(@lead), notice: 'Your message was sent sucessfully.'
     else
       render :new
