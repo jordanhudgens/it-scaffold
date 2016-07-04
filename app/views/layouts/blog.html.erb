@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="full">
+<head>
+  <title><%= @page_title || "IT Scaffold Blog" %></title>
+  <meta name="description" content="<%= @page_description || 'Your enterprise technology partner' %>">
+	<meta name="keywords" content="<%= @page_keywords || 'outsourced it, it consulting, software development firm, digital agency, web application development team' %>">
+	<meta name="author" content='IT Scaffold'>
+  <%= stylesheet_link_tag    'blog', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+</head>
+
+<body id="home">
+
+	<%= yield %>
+
+	<%= render 'blogs/blog_footer' %>
+
+</body>
+</html>

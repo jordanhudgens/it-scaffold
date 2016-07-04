@@ -24,3 +24,4 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'puma'
 gem 'rails_12factor'
 gem "font-awesome-rails"
+gem 'kaminari', '~> 0.16.3'

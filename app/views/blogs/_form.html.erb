@@ -1,0 +1,61 @@
+<style type="text/css">
+  textarea{
+    height:500px; 
+    min-height:500px;  
+    max-height:500px;
+  }
+</style>
+
+<div id="wrap">
+  <%= render 'blog_nav' %>
+      
+  <section id="hero" class="light-typo">
+    <div id="cover-image" class="image-bg animated fadeIn"></div>
+    <div class="container welcome-content">
+      <div class="middle-text">
+        <h1><%= form_title %></h1>
+        <h2><%= subtitle %></h2>
+      </div>
+    </div>
+  </section>
+
+  <div id="start" class="container content">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <br>
+
+        <%= form_for @blog do |f| %>
+          <%= render partial: 'shared/validations', locals: { model_object: @blog } %>
+
+          <%= f.label :title, class: 'form-label' %>
+          <%= f.text_field :title, class: 'form-control input-lg' %><br>
+
+          <%= f.label :blog_url, class: 'form-label' %>
+          <%= f.text_field :blog_url, class: 'form-control input-lg' %><br>
+
+          <%= f.label :summary, class: 'form-label' %>
+          <%= f.text_field :summary, class: 'form-control input-lg' %><br>
+
+          <%= f.label :seo_keywords, class: 'form-label' %>
+          <%= f.text_field :seo_keywords, class: 'form-control input-lg' %><br>
+
+          <%= f.label :post_status, class: 'form-label' %>
+          <%= f.select :post_status, options_for_select(guide_status_enum, @blog.post_status), {include_blank: false}, { class: 'form-control input-lg' } %><br>
+
+          <div class="row">
+            <div class="col-md-6">
+              <label class="form-label">Content</label>
+            </div>
+            <div class="col-md-6 pull-right">
+              <span class="help label label-default pull-right">Markdown Supported</span>
+            </div>
+          </div>
+          <%= f.text_area :content, class: 'form-control' %><br>
+
+          <%= f.submit "Save", class: 'btn btn-lg btn-default' %>
+        <% end %>
+        <br>
+      </div>  
+    </div>
+  </div>
+</div>

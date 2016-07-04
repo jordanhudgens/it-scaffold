@@ -1,0 +1,38 @@
+<div id="wrap">
+  <%= render 'blog_nav' %>
+      
+  <section id="hero" class="light-typo">
+    <div id="cover-image" class="image-bg animated fadeIn"></div>
+    <div class="container welcome-content">
+      <div class="middle-text">
+        <h1><%= @page_title %></h1>
+        <h2><%= @page_description %></h2>
+      </div>
+    </div>
+  </section>
+
+  <div id="start" class="container content">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+
+        <%= render partial: 'alerts' %>
+
+        <% @blogs.each do |post| %>
+          <article class="clearfix">
+            <div class="post-date">
+              <%= post.created_at.strftime("%B %d, %Y") %>
+            </div>
+
+            <h2><%= link_to post.title, post %></h2>
+
+            <p>
+              <%= post.body %> <%= link_to "Read full post", post %>
+            </p>
+          </article>
+        <% end %>
+
+        <%= paginate @blogs %>
+      </div>
+    </div><!-- end row -->
+  </div>
+</div>  

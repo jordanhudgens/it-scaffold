@@ -1,0 +1,40 @@
+<div id="wrap">
+	<%= render 'blog_nav' %>
+			
+	<section id="hero" class="light-typo">
+		<div id="cover-image" class="image-bg animated fadeIn"></div>
+		<div class="container welcome-content">
+			<div class="middle-text">
+				<h1><%= @blog.title %></h1>
+			</div>
+		</div>
+	</section>
+
+	<div id="start" class="container content">
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<%= render 'alerts' %>
+
+				<div class="row">
+          <div class="col-md-9 col-sm-10 col-xs-12 column guide-title">
+            <h4>By IT Scaffold</h4>
+          </div>
+
+          <div class="col-md-3 column hidden-xs hidden-sm hidden-md">
+          	<!-- TODO Add Sharing Icons -->
+          </div>
+        </div>
+				
+				<div class="blog-body">
+					<%= markdown(@blog.body) %>
+				</div>
+
+				<div class="well">
+					<div class='row'>
+						<!-- TODO Add user information -->
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
